@@ -136,6 +136,12 @@ Mapeamento por princípio CIA:
 - Integridade: SHA-256 de persistência, controles de exceção de integridade, validações server-side.
 - Disponibilidade: rate limiting, tratamento global de exceções e degradação controlada por código HTTP.
 
+Referência de controles do Anexo A aplicada na solução:
+- A.9 Controle de Acesso: autenticação JWT, RBAC por papéis, policies de autorização e escopo por operadora.
+- A.10 Criptografia: TLS 1.3 em trânsito, AES em repouso, bcrypt para segredo de acesso e SHA-256 para integridade.
+- A.12 Segurança Operacional: logs estruturados, middleware global de exceções e rate limiting de ingestão.
+- A.16 Gestão de Incidentes: fluxo definido de detecção, contenção, erradicação e recuperação (seção 4.4).
+
 Mapeamento PDCA:
 - Plan: modelagem de ameaças e definição de controles.
 - Do: implementação em Program, middleware, serviços e repositórios.
@@ -145,6 +151,8 @@ Mapeamento PDCA:
 #### 3.2 Privacidade (LGPD/princípios similares)
 Questão orientadora: Como a solução protege dados de localização/comportamentais?
 Resposta:
+- Dados de localização operacional tratados: coordenadas orbitais, histórico de telemetria e trilhas de comando por satélite/operadora.
+- Dados comportamentais operacionais tratados: padrões de anomalia, tendências de falha e histórico de intervenções.
 - Finalidade e necessidade: coleta mínima para monitoramento e manutenção orbital.
 - Minimização de exposição: filtros por operadora nos endpoints de consulta/ação.
 - Transparência: respostas padronizadas de erro e trilhas de log para auditoria.
