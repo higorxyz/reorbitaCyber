@@ -1,4 +1,4 @@
-# REORBITA - Cybersecurity (Global Solution 2026/1)
+<h1><img src="assets/brand/reorbita-logo.png" alt="Logo REORBITA" width="56" align="absmiddle" /> REORBITA - Cybersecurity (Global Solution 2026/1)</h1>
 
 Documento único de Cybersecurity da REORBITA, consolidando:
 - o que foi implementado na API em C#,
