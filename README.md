@@ -51,8 +51,6 @@ Este documento foi estruturado para responder diretamente aos requisitos de segu
 | 3.2 Privacidade (LGPD/princípios similares) | Seção 4.3 |
 | 4.1 Plano de Resposta a Incidentes | Seção 4.4 |
 
-Cobertura consolidada dos requisitos: completa.
-
 ## 4. Respostas objetivas dos requisitos de segurança
 
 ### 4.1 Análise de Riscos e Ameaças (Threat Modeling)
@@ -91,8 +89,6 @@ Resposta:
 | DDoS na ingestão | Denial of Service | Indisponibilidade da API | AddRateLimiter + EnableRateLimiting no endpoint de telemetria |
 | Escalada de privilégio | Elevation of Privilege | Acesso indevido a comandos críticos | JWT + roles + MFA para ReorbitaAdmin em comandos de frota |
 | Corrupção da persistência | Tampering | Estado adulterado de satélites/robôs | SHA-256 de integridade + exceção de integridade + logs críticos |
-
-Observação de conformidade: foram mapeados 5 vetores, atendendo ao mínimo de 3 vetores solicitado.
 
 ### 4.2 Arquitetura de Segurança (Controles)
 
@@ -198,17 +194,10 @@ Recuperação:
 | Exposição de dados em disco | Criptografia em repouso | CriptografiaArquivoHelper (AES) |
 | Falta de trilha forense | Logging estruturado | AddJsonConsole + ILogger + LogCritical |
 
-## 6. Critérios de avaliação (Aplicabilidade, Profundidade, Coerência)
-| Critério | Como foi atendido |
-|---|---|
-| Aplicabilidade | Controles aplicados ao contexto real da REORBITA (telemetria, frota, operadoras, satélites) |
-| Profundidade técnica | Implementação concreta de autenticação, autorização, criptografia, integridade, mTLS, rate limiting e resposta a incidentes |
-| Coerência | Ameaças identificadas possuem controles correspondentes e rastreáveis no código e no plano operacional |
-
-## 7. Pontos de evolução (maturidade)
+## 6. Pontos de evolução (maturidade)
 - Persistir revogação de token em armazenamento durável para cenários multi-instância.
 - Instrumentar SIEM/alertas automáticos com limiares por evento crítico.
 - Formalizar exercícios periódicos de mesa (tabletop) para incidente cibernético.
 
-## 8. Conclusão
-A entrega atende aos requisitos de segurança com evidência técnica de implementação e plano operacional consistente. O documento une visão de risco, controles aplicados e continuidade de negócio em um único artefato auditável.
+## 7. Conclusão
+O documento reúne a visão de risco, os controles aplicados e o plano de continuidade em um único artefato técnico e auditável.
